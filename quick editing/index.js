@@ -3,8 +3,8 @@ let width = 750;
 let height = 750;
 let radius = 500;
 let speed = 10;
-let circles = 1000;
-let golden_ratio = 1.01;
+let circles = 100;
+let golden_ratio = 1.1;
 
 // (1+Math.sqrt(5))/2
 function init() {
