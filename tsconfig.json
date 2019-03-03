@@ -3,10 +3,16 @@
       "outDir": "./dist/",
       "noImplicitAny": true,
       "sourceMap": true,
-      "module": "es6",
+      "module": "commonjs",
       "target": "es5",
       "jsx": "react",
       "allowJs": false
       
-    }
+    },
+    "files": [
+        "./src/index.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
   }
