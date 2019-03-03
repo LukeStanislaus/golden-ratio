@@ -1,10 +1,10 @@
 let time = 0;
 let width = 750;
 let height = 750;
-let radius = 750;
-let speed =1;
+let radius = 40;
+let speed =5;
 let circles = 5;
-let golden_ratio = ((1+Math.sqrt(5))/2);
+let golden_ratio = 1/((1+Math.sqrt(5))/2);
 
 // (1+Math.sqrt(5))/2
 export function init() {
