@@ -1,10 +1,10 @@
-var degrees =0;
+var degrees = 0;
 let width = 750;
 let height = 750;
-let radius = 500;
-let speed = 10;
-let circles = 1000;
-let golden_ratio = 1.01;
+let radius = 750;
+let speed =1;
+let circles = 8;
+let golden_ratio = ((1+Math.sqrt(5))/2);
 
 // (1+Math.sqrt(5))/2
 function init() {
@@ -18,7 +18,6 @@ function draw() {
   let canvas = (document.getElementById('canvas') as HTMLCanvasElement);
 canvas.width= width*2;
 canvas.height= height*2;
-  let x:number[] = [];
   let centre:[number,number][] = [[width,height]];
   
   ctx.beginPath();
@@ -36,6 +35,8 @@ canvas.height= height*2;
   ctx.save();
   window.requestAnimationFrame(draw);
 }
+
+
 function calcCentre(x: number, y: number, radius: number, angle: number){
 let deltax = Math.sin(angle) * (radius*golden_ratio-radius);
 let deltay = Math.cos(angle) *(radius*golden_ratio-radius);
@@ -43,16 +44,5 @@ let tuple:[number, number] = [x+deltax, y+deltay];
 return tuple;
 
 }
-function drawSphere(x: number, y: number, date: Date, ctx: CanvasRenderingContext2D, index:number, max:number, radius: number){
-    
-    let speedMulitpilier = (1.61803 * index) / max;
-    ctx.beginPath();
-    ctx.arc(x, (y +radius)-(radius/(1.6803 * index)), radius/(1.6803*index), 0, Math.PI * 2, true); // Outer circle
-    ctx.stroke();
-    ctx.translate(x, (y +radius)-(radius/(1.6803 * index))); 
-    ctx.rotate((Math.PI / 180) * 1*speedMulitpilier);
-    ctx.translate(-x, -((y +radius)-(radius/(1.6803 * index)))); 
-    
-  ctx.save();
-}
+
 init();
