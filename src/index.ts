@@ -1,5 +1,5 @@
-import init from "./logic";
-init(<HTMLCanvasElement>document.getElementById("root"), 1, 5, 1.6803,1);
+import {golden_ratio_loader} from "./logic";
+//var x = new golden_ratio_loader()
 if (module.hot) {
   console.log("module is hot");
   module.hot.accept(["./logic.ts"], function () {
