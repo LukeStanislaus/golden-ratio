@@ -1,4 +1,4 @@
-//import init from "./logic";
+//import {init} from "./logic";
 //init(<HTMLCanvasElement>document.getElementById("root"), 1, 5, 1.6803,1);
 if (module.hot) {
   console.log("module is hot");
