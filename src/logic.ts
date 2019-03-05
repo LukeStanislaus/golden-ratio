@@ -1,47 +1,32 @@
 let time = 0;
-let width = 750;
-let height = 750;
-let radius = 40;
-let speed =5;
-let circles = 5;
-let golden_ratio = 1/((1+Math.sqrt(5))/2);
-
-// (1+Math.sqrt(5))/2
-export function init() {
+let golden_ratio = 1.6803;
+export function init(root: HTMLCanvasElement, speed:number, circles:number, golden_ratio:number, circle_size:number) {
   setInterval(()=> time += speed, 1);
-  window.requestAnimationFrame(draw);
+  window.requestAnimationFrame(()=>{draw(root.getContext("2d"), (root.width>root.height?root.height:root.width)/(2*circle_size), (root.width>root.height?root.height:root.width)/2, circles, golden_ratio)});
 }
 
-function draw() { 
-    let canvas = (document.getElementById('canvas') as HTMLCanvasElement);
-  var ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, width*2, height*2); // clear canvas
-canvas.width= width*2;
-canvas.height= height*2;
-  let centre:[number,number]= [width,height];
+function draw(ctx: CanvasRenderingContext2D, radius:number, size:number, circles:number, golden_ratio:number) { 
+  ctx.clearRect(0, 0, size*2, size*2); // clear canvas
+  let centre:[number,number]= [size,size];
   ctx.beginPath();
-  ctx.arc(width, height, radius, 0, Math.PI * 2, true); // Outer circle
+  ctx.arc(size, size, radius, 0, Math.PI * 2, true); // Outer circle
   ctx.stroke();
 
   for (let index = 1; index < circles; index++) {
     let speedMulitpilier = (golden_ratio * ((index)) / circles);
     let degrees = (Math.PI/180)*speedMulitpilier*time;
-    let next = calcCentre(centre[0],centre[1],radius/Math.pow(golden_ratio,index),degrees);
+    centre = calcCentre(centre[0],centre[1],radius/Math.pow(golden_ratio,index),degrees);
     ctx.beginPath();
-    ctx.arc(next[0],next[1], radius/Math.pow(golden_ratio,index), 0, Math.PI * 2, true); 
+    ctx.arc(centre[0],centre[1], radius/Math.pow(golden_ratio,index), 0, Math.PI * 2, true); 
     ctx.stroke();
-    centre = next;
-
+    centre;
   }
   ctx.save();
-  window.requestAnimationFrame(draw);
+  window.requestAnimationFrame(()=>{draw(ctx,radius,size,circles,golden_ratio)});
 }
-
-
 function calcCentre(x: number, y: number, radius: number, angle: number){
 let deltax = Math.sin(angle) * (radius*golden_ratio-radius);
 let deltay = Math.cos(angle) *(radius*golden_ratio-radius);
 let tuple:[number, number] = [x+deltax, y+deltay];
 return tuple;
-
 }
