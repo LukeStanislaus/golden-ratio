@@ -1,6 +1,6 @@
 let time = 0;
 let golden_ratio = 1.6803;
-export function initiate(root: HTMLCanvasElement, speed:number, circles:number, golden_ratio:number, circle_size:number) {
+export default function initiate(root: HTMLCanvasElement, speed:number, circles:number, golden_ratio:number, circle_size:number) {
   setInterval(()=> time += speed, 1);
   window.requestAnimationFrame(()=>{draw(root.getContext("2d"), (root.width>root.height?root.height:root.width)/(2*circle_size), (root.width>root.height?root.height:root.width)/2, circles, golden_ratio)});
 }

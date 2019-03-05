@@ -1,1 +1,1 @@
-declare function initiate(root: HTMLCanvasElement, speed:number, circles:number, golden_ratio:number, circle_size:number):void;
+export default function initiate(root: HTMLCanvasElement, speed:number, circles:number, golden_ratio:number, circle_size:number):void;
