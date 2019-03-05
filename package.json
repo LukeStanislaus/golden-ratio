@@ -1,6 +1,6 @@
 {
   "name": "golden-ratio-loader",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "author": "Luke Stanislaus <luke@stanislaus.co.uk>",
   "scripts": {
@@ -11,8 +11,7 @@
     "type": "git",
     "url": "https://github.com/LukeStanislaus/golden-ratio.git"
   },
-  "files": ["dist/main.js"],
-  "types": "src/logic.d.ts",
+  "files": ["dist/main.js","src/logic.d.ts"],
   "license": "ISC",
   "devDependencies": {
     "@types/webpack-env": "^1.13.8",
