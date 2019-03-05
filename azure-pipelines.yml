@@ -19,5 +19,8 @@ steps:
     npm install -g webpack webpack-cli --save-dev
     npm i
     npx webpack --config webpack.config.js
-    npm publish
-    displayName: 'npm install, run webpack'
+  displayName: 'npm install, run webpack'
+- task: Npm@1
+  inputs:
+    command: publish
+    publishEndpoint: 'lukestanislausnpm'
