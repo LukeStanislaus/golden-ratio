@@ -1,4 +1,4 @@
-import {initiate} from "./logic";
+import {goldenratio} from "./logic";
 //var x = new golden_ratio_loader()
 if (module.hot) {
   console.log("module is hot");
