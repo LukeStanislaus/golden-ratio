@@ -11,7 +11,8 @@
     "type": "git",
     "url": "https://github.com/LukeStanislaus/golden-ratio.git"
   },
-  "types": "/dist/logic-function.d.ts",
+  "main": "./dist/main.js",
+  "types": "./dist/logic-function.d.ts",
   "license": "ISC",
   "devDependencies": {
     "@types/webpack-env": "^1.13.8",
