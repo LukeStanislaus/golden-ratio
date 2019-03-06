@@ -4,9 +4,9 @@
   "description": "",
   "author": "Luke Stanislaus <luke@stanislaus.co.uk>",
   "scripts": {
-    "build": "webpack",
-    "server": "webpack-dev-server -w --hot --inline --config webpack.config.js --host localhost --port 80 --open-page dist/"
-  },    
+    "build": "webpack --config webpack.prod.js",
+    "server": "webpack-dev-server -w --hot --inline --config webpack.dev.js --host localhost --port 80 --open-page dist/test"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/LukeStanislaus/golden-ratio.git"
@@ -24,7 +24,8 @@
     "typescript": "^3.3.3333",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {}
 }
