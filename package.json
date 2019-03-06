@@ -5,7 +5,7 @@
   "author": "Luke Stanislaus <luke@stanislaus.co.uk>",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "server": "webpack-dev-server -w --hot --inline --config webpack.dev.js --host localhost --port 80 --open-page dist/test"
+    "start": "webpack-dev-server -w --hot --inline --config webpack.dev.js --host localhost --port 80 --open-page dist/test"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "@types/node": "^11.10.4"
   },
   "dependencies": {}
 }
