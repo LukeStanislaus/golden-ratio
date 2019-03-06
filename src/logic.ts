@@ -3,6 +3,7 @@ export default function goldenratio(root: HTMLCanvasElement, speed:number=1, cir
   setInterval(()=> time += speed, 1);
   window.requestAnimationFrame(()=>{draw(root.getContext("2d"), (root.width>root.height?root.height:root.width)/(2*circle_size), (root.width>root.height?root.height:root.width)/2, circles, golden_ratio, colours)});
 }
+
 function draw(ctx: CanvasRenderingContext2D, radius:number, size:number, circles:number, golden_ratio:number, colours:boolean) { 
   ctx.clearRect(0, 0, size*2, size*2); // clear canvas
   let centre:[number,number]= [size,size];

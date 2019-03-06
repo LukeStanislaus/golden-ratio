@@ -5,11 +5,14 @@
       "sourceMap": true,
       "module": "es6",
       "target": "esnext",
-      "allowJs": false
+      "allowJs": false,
+      "declaration": true,
+      "noEmitOnError": true,
+      "pretty": true
       
     },
     "files": [
-        "./src/index.ts",
+        //"./src/index.ts",
         "./src/logic.ts"
     ],
     "exclude": [

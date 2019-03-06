@@ -1,5 +1,5 @@
-import goldenratio from "C:/Users/Luke/source/azure repos/RandomThings/RandomThings/node_modules/golden-ratio-loader/dist/";
-goldenratio(<HTMLCanvasElement>document.getElementById("root"), 1,10,1.6803, 1, null);
+import goldenratio from "./logic";
+goldenratio(<HTMLCanvasElement>document.getElementById("root"), 1,10,1.6803, 1, true);
 if (module.hot) {
   console.log("module is hot");
   module.hot.accept(["./logic.ts"], function () {

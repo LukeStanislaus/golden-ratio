@@ -1,18 +1,17 @@
 {
   "name": "golden-ratio-loader",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "",
   "author": "Luke Stanislaus <luke@stanislaus.co.uk>",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "tsc",
     "start": "webpack-dev-server -w --hot --inline --config webpack.dev.js --host localhost --port 80 --open-page dist/test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/LukeStanislaus/golden-ratio.git"
   },
-  "main": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist/",
   "license": "ISC",
   "devDependencies": {
     "@types/webpack-env": "^1.13.8",
@@ -26,7 +25,9 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1",
-    "@types/node": "^11.10.4"
+    "@types/node": "^11.10.4",
+    "webpack-watch": "^0.2.0",
+    "ts-loader": "^5.3.3"
   },
   "dependencies": {}
 }
