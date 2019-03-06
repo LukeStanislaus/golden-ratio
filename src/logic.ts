@@ -24,7 +24,7 @@ function draw(ctx: CanvasRenderingContext2D, radius:number, size:number, circles
     ctx.save();
     centre;
   }
-  window.requestAnimationFrame(()=>{draw(ctx,radius,size,circles,golden_ratio)});
+  window.requestAnimationFrame(()=>{draw(ctx,radius,size,circles,golden_ratio, colours)});
 }
 function calcCentre(x: number, y: number, radius: number, angle: number, golden_ratio:number){
 let deltax = Math.sin(angle) * (radius*golden_ratio-radius);
