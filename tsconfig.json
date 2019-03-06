@@ -3,14 +3,14 @@
       "outDir": "./dist/",
       "noImplicitAny": true,
       "sourceMap": true,
-      "module": "commonjs",
-      "target": "es5",
-      "jsx": "react",
+      "module": "es6",
+      "target": "esnext",
       "allowJs": false
       
     },
     "files": [
-        "./src/index.ts"
+        "./src/index.ts",
+        "./src/logic.ts"
     ],
     "exclude": [
         "node_modules"

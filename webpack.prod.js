@@ -4,7 +4,7 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
   entry: './src/logic.ts',
-  mode: "production",
+  mode: "development",
   output: {
     path: path.resolve(__dirname, 'dist/')
   }
