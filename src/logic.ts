@@ -1,7 +1,9 @@
 let time = 0;
-export default function goldenratio(root: HTMLCanvasElement, speed:number=1, circles:number=10, golden_ratio:number=1.6803, circle_size:number=1, colours: boolean = false) {
+export default function goldenratio(root: HTMLCanvasElement, speed:number=1, circles:number=10, 
+  golden_ratio:number=1.6803, circle_size:number=1, colours: boolean = false):number {
+  time =0;
   setInterval(()=> time += speed, 1);
-  window.requestAnimationFrame(()=>{draw(root.getContext("2d"), (root.width>root.height?root.height:root.width)/(2*circle_size), (root.width>root.height?root.height:root.width)/2, circles, golden_ratio, colours)});
+  return window.requestAnimationFrame(()=>{draw(root.getContext("2d"), (root.width>root.height?root.height:root.width)/(2*(1/circle_size)), (root.width>root.height?root.height:root.width)/2, circles, golden_ratio, colours)});
 }
 
 

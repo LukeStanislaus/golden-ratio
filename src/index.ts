@@ -1,5 +1,8 @@
 import goldenratio from "./logic";
-goldenratio(<HTMLCanvasElement>document.getElementById("root"), 1,10,1.6803,1,true);
+let globalId = goldenratio(<HTMLCanvasElement>document.getElementById("root"), 1,10,1.6803,0.5,true);
+
+
+
 if (module.hot) {
   console.log("module is hot");
   module.hot.accept(["./logic.ts"], function () {
