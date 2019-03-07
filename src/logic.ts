@@ -1,9 +1,10 @@
 let time = 0;
-export default function goldenratio(root: HTMLCanvasElement, speed:number=1, circles:number=10, 
-  golden_ratio:number=1.6803, circle_size:number=1, colours: boolean = false):number {
+export var globalId:number;
+export function goldenratio(root: HTMLCanvasElement, speed:number=1, circles:number=10, 
+  golden_ratio:number=1.6803, circle_size:number=1, colours: boolean = false) {
   time =0;
   setInterval(()=> time += speed, 1);
-  return window.requestAnimationFrame(()=>{draw(root.getContext("2d"), (root.width>root.height?root.height:root.width)/(2*(1/circle_size)), (root.width>root.height?root.height:root.width)/2, circles, golden_ratio, colours)});
+  globalId = window.requestAnimationFrame(()=>{draw(root.getContext("2d"), (root.width>root.height?root.height:root.width)/(2*(1/circle_size)), (root.width>root.height?root.height:root.width)/2, circles, golden_ratio, colours)});
 }
 
 
@@ -27,7 +28,8 @@ function draw(ctx: CanvasRenderingContext2D, radius:number, size:number, circles
     centre;
   }
   ctx.save();
-  window.requestAnimationFrame(()=>{draw(ctx,radius,size,circles,golden_ratio, colours)});
+  
+globalId = window.requestAnimationFrame(()=>{draw(ctx,radius,size,circles,golden_ratio, colours)});
 }
 function calcCentre(x: number, y: number, radius: number, angle: number, golden_ratio:number){
 let deltax = Math.sin(angle) * (radius*golden_ratio-radius);

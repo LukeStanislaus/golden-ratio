@@ -1,6 +1,7 @@
-import goldenratio from "./logic";
-let globalId = goldenratio(<HTMLCanvasElement>document.getElementById("root"), 1,10,1.6803,0.5,true);
-
+import {goldenratio, globalId} from "./logic";
+goldenratio(<HTMLCanvasElement>document.getElementById("root"), 1,10,1.6803,0.5,true);
+//window.cancelAnimationFrame(globalId);
+setTimeout(()=>{window.cancelAnimationFrame(globalId)}, 2000)
 
 
 if (module.hot) {
