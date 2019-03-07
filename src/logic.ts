@@ -21,7 +21,7 @@ function draw(ctx: CanvasRenderingContext2D, radius:number, size:number, circles
     centre = calcCentre(centre[0],centre[1],radius/Math.pow(golden_ratio,index),degrees, golden_ratio);
     ctx.beginPath();    
     if (colours!=0) {
-      ctx.strokeStyle = "hsl("+(index/(circles*colours))*360+",100%,50%)";
+      ctx.strokeStyle = "hsl("+((index*colours)/circles)*360+",100%,50%)";
       }
       else{
         ctx.strokeStyle = "rgb(0,0,0)"
