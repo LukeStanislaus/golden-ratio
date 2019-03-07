@@ -17,7 +17,7 @@ function draw(ctx: CanvasRenderingContext2D, radius:number, size:number, circles
 
   for (let index = 1; index < circles; index++) {
     let speedMulitpilier = index;
-    let degrees = (Math.PI/180)*speedMulitpilier*time;
+    let degrees = (Math.PI/180)*speedMulitpilier*(time/0.6944444444444);
     centre = calcCentre(centre[0],centre[1],radius/Math.pow(golden_ratio,index),degrees, golden_ratio);
     ctx.beginPath();    
     if (colours) {
