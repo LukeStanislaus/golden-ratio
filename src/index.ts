@@ -1,6 +1,5 @@
 import {goldenratio} from "./logic";
-goldenratio(<HTMLCanvasElement>document.getElementById("root"), 0.1,10,1.6803,1,true);
-setTimeout(()=>{goldenratio(<HTMLCanvasElement>document.getElementById("root"), 0.1,10,1.6803,1,false)}, 1000);
+goldenratio(<HTMLCanvasElement>document.getElementById("root"), 0.1,10,1.6803,1,2);
 
 
 if (module.hot) {
