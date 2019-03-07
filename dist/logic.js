@@ -1,7 +1,12 @@
 let time = 0;
-export default function goldenratio(root, speed = 1, circles = 10, golden_ratio = 1.6803, circle_size = 1, colours = false) {
-    setInterval(() => time += speed, 1);
-    window.requestAnimationFrame(() => { draw(root.getContext("2d"), (root.width > root.height ? root.height : root.width) / (2 * circle_size), (root.width > root.height ? root.height : root.width) / 2, circles, golden_ratio, colours); });
+let globalId;
+let interval;
+export function goldenratio(root, speed = 1, circles = 10, golden_ratio = 1.6803, circle_size = 1, colours = false) {
+    time = 0;
+    window.cancelAnimationFrame(globalId);
+    clearInterval(interval);
+    interval = setInterval(() => time += speed, 1);
+    window.requestAnimationFrame(() => { draw(root.getContext("2d"), (root.width > root.height ? root.height : root.width) / (2 * (1 / circle_size)), (root.width > root.height ? root.height : root.width) / 2, circles, golden_ratio, colours); });
 }
 function draw(ctx, radius, size, circles, golden_ratio, colours) {
     ctx.clearRect(0, 0, size * 2, size * 2); // clear canvas
@@ -19,10 +24,10 @@ function draw(ctx, radius, size, circles, golden_ratio, colours) {
         }
         ctx.arc(centre[0], centre[1], radius / Math.pow(golden_ratio, index), 0, Math.PI * 2, true);
         ctx.stroke();
-        ctx.save();
         centre;
     }
-    window.requestAnimationFrame(() => { draw(ctx, radius, size, circles, golden_ratio, colours); });
+    ctx.save();
+    globalId = window.requestAnimationFrame(() => { draw(ctx, radius, size, circles, golden_ratio, colours); });
 }
 function calcCentre(x, y, radius, angle, golden_ratio) {
     let deltax = Math.sin(angle) * (radius * golden_ratio - radius);

@@ -1,1 +1,2 @@
-export default function goldenratio(root: HTMLCanvasElement, speed?: number, circles?: number, golden_ratio?: number, circle_size?: number, colours?: boolean): void;
+export declare var globalId: number;
+export declare function goldenratio(root: HTMLCanvasElement, speed?: number, circles?: number, golden_ratio?: number, circle_size?: number, colours?: boolean): void;
